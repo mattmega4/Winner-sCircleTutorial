@@ -17,54 +17,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnersColor" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Rl-7xQ">
-                                <rect key="frame" x="202.5" y="115" width="195" height="195"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="fzK-JE-cRN"/>
-                                    <constraint firstAttribute="height" constant="195" id="kWk-VQ-mel"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWk-dk-uD9">
-                                <rect key="frame" x="238" y="467" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="9Iz-aj-iU2"/>
-                                    <constraint firstAttribute="height" constant="125" id="jIM-BW-VKf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o0P-EL-1B9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cT-LL-MBV">
-                                <rect key="frame" x="238" y="327" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="GgH-F7-rdW"/>
-                                    <constraint firstAttribute="height" constant="125" id="uWp-dQ-MZE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6TY-sl-IES"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fMi-N5-kuP">
+                                <rect key="frame" x="203" y="55" width="195" height="490"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YEs-lQ-wcx">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="195"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnersColor" translatesAutoresizingMaskIntoConstraints="NO" id="Ezg-Rl-7xQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="195"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="195" id="Drz-qL-YnN"/>
+                                                    <constraint firstAttribute="width" constant="195" id="sGN-Ep-234"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-5O-d5f">
+                                        <rect key="frame" x="35" y="220" width="125" height="270"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cT-LL-MBV">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="QUE-ia-Wci"/>
+                                                    <constraint firstAttribute="height" constant="125" id="sVM-4G-hcJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6TY-sl-IES"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWk-dk-uD9">
+                                                <rect key="frame" x="0.0" y="145" width="125" height="125"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="125" id="QpS-JM-VQM"/>
+                                                    <constraint firstAttribute="width" constant="125" id="vXq-xb-R1Y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o0P-EL-1B9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0cT-LL-MBV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="33E-6G-y1Q"/>
-                            <constraint firstItem="lWk-dk-uD9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Egd-Ej-AqS"/>
-                            <constraint firstItem="Ezg-Rl-7xQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="95" id="HND-QT-dkf"/>
-                            <constraint firstItem="0cT-LL-MBV" firstAttribute="top" secondItem="Ezg-Rl-7xQ" secondAttribute="bottom" constant="17" id="McU-oa-96V"/>
-                            <constraint firstItem="lWk-dk-uD9" firstAttribute="top" secondItem="0cT-LL-MBV" secondAttribute="bottom" constant="15" id="Ngm-sP-Xxu"/>
-                            <constraint firstItem="Ezg-Rl-7xQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X4J-Pw-XdZ"/>
+                            <constraint firstItem="fMi-N5-kuP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Izm-3a-G1d"/>
+                            <constraint firstItem="fMi-N5-kuP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rmd-td-Uz4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonsStackView" destination="KV1-5O-d5f" id="KD0-5w-uxm"/>
                         <outlet property="joinCompButton" destination="lWk-dk-uD9" id="WHV-Fz-5yT"/>
+                        <outlet property="logoStackView" destination="YEs-lQ-wcx" id="rTb-Ji-TkP"/>
                         <outlet property="startCompButton" destination="0cT-LL-MBV" id="YZH-9g-mSh"/>
                     </connections>
                 </viewController>

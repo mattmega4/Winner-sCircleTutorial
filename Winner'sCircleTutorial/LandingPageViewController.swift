@@ -10,8 +10,12 @@ import UIKit
 
 class LandingPageViewController: UIViewController {
 
+    
     @IBOutlet weak var startCompButton: UIButton!
     @IBOutlet weak var joinCompButton: UIButton!
+    @IBOutlet weak var logoStackView: UIStackView!
+    @IBOutlet weak var buttonsStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,11 +36,43 @@ class LandingPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func animateLogoUpAndButtonsHorizontalAndDownAndSpaced(){
+        
+        UIView.animateWithDuration(1.5,
+                                   delay: 0.0,
+                                   options: .CurveLinear,
+                                   animations: {
+                                    
+                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, -90.0 )
+
+                                    self.buttonsStackView.axis = .Horizontal
+                                    self.buttonsStackView.transform = CGAffineTransformMakeTranslation( 0.0, 90.0 )
+                                    self.buttonsStackView.spacing = 40.0
+                                    
+                                    self.startCompButton.setTitle("Back", forState: .Normal)
+                                    
+                                    self.joinCompButton.setTitle("Next", forState: .Normal)
+                                    
+                                    
+
+                                    
+                                    
+            }, completion: nil)
+        
+    }
+
+    
     @IBAction func startButtonTapped(sender: UIButton) {
+        
+        animateLogoUpAndButtonsHorizontalAndDownAndSpaced()
+        
     }
 
 
     @IBAction func joinButtonTapped(sender: UIButton) {
+        
+        
+        
     }
 
 }

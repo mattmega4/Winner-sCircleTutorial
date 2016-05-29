@@ -19,22 +19,63 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-bR-lPF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-VH-XJt">
+                                        <rect key="frame" x="202" y="55" width="195" height="490"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p5S-Gs-Thm">
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="195"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnersColor" translatesAutoresizingMaskIntoConstraints="NO" id="8Xe-UW-stU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="195"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="195" id="JHR-9T-Bl7"/>
+                                                            <constraint firstAttribute="height" constant="195" id="ddV-Zt-cP3"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-J4-S2R">
+                                                <rect key="frame" x="35" y="220" width="125" height="270"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQi-HH-3Rh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="125" id="acp-Q1-2iD"/>
+                                                            <constraint firstAttribute="width" constant="125" id="wCf-ND-hob"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xQ-FO-fr2">
+                                                        <rect key="frame" x="0.0" y="145" width="125" height="125"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="125" id="Rb1-i2-mXx"/>
+                                                            <constraint firstAttribute="width" constant="125" id="def-9D-nig"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnersWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Kyp-cX-uyd">
-                                <rect key="frame" x="202" y="115" width="195" height="195"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="195" id="EB0-bY-QcL"/>
-                                    <constraint firstAttribute="width" constant="195" id="kWX-ZH-saz"/>
+                                    <constraint firstItem="uaa-VH-XJt" firstAttribute="centerY" secondItem="cGs-bR-lPF" secondAttribute="centerY" id="Bmg-Cw-bBH"/>
+                                    <constraint firstItem="uaa-VH-XJt" firstAttribute="centerX" secondItem="cGs-bR-lPF" secondAttribute="centerX" id="i9c-bk-dcz"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cGs-bR-lPF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8BO-iK-wiG"/>
-                            <constraint firstItem="Kyp-cX-uyd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NXy-pj-sdJ"/>
                             <constraint firstItem="cGs-bR-lPF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qd4-Z8-K88"/>
-                            <constraint firstItem="Kyp-cX-uyd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="95" id="cXD-SR-y9i"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cGs-bR-lPF" secondAttribute="bottom" id="hpd-2I-ItG"/>
                             <constraint firstAttribute="trailing" secondItem="cGs-bR-lPF" secondAttribute="trailing" id="yxr-vQ-Das"/>
                         </constraints>
@@ -46,6 +87,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="winnersWhite" width="587" height="587"/>
+        <image name="winnersColor" width="587" height="587"/>
     </resources>
 </document>
