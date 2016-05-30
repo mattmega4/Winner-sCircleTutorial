@@ -57,7 +57,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
                                                 <state key="normal">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o0P-EL-1B9"/>
@@ -79,13 +79,35 @@
                         <outlet property="joinCompButton" destination="lWk-dk-uD9" id="WHV-Fz-5yT"/>
                         <outlet property="logoStackView" destination="YEs-lQ-wcx" id="rTb-Ji-TkP"/>
                         <outlet property="startCompButton" destination="0cT-LL-MBV" id="YZH-9g-mSh"/>
+                        <segue destination="XY7-rK-09i" kind="show" identifier="fromLandingToStart" animates="NO" id="c88-bi-Vv5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Start Competition View Controller-->
+        <scene sceneID="mTe-Kf-TGs">
+            <objects>
+                <viewController id="XY7-rK-09i" customClass="StartCompetitionViewController" customModule="Winner_sCircleTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3jv-ue-IwS"/>
+                        <viewControllerLayoutGuide type="bottom" id="hhj-Py-XPc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jHB-Vl-c1L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="fromStartToLanding" animates="NO" id="hb4-24-KdZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHa-yl-nX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="289"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="winnersColor" width="587" height="587"/>
+        <image name="winnersColor" width="588" height="589"/>
     </resources>
 </document>

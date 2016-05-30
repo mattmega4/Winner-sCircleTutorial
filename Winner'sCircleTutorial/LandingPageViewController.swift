@@ -23,11 +23,11 @@ class LandingPageViewController: UIViewController {
         
         startCompButton.landingPageButtonsRound()
         startCompButton.setTitle("Start a Competition", forState: .Normal)
-        startCompButton.backgroundColor = UIColor(red: 206.0/255.0, green: 21.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+        startCompButton.backgroundColor = UIColor(red: 239.0/255.0, green: 77.0/255.0, blue: 77.0/255.0, alpha: 1.0)
         
         joinCompButton.landingPageButtonsRound()
         joinCompButton.setTitle("Join a Competition", forState: .Normal)
-        joinCompButton.backgroundColor = UIColor(red: 204.0/255.0, green: 186.0/255.0, blue: 23.0/155.0, alpha: 1.0)
+        joinCompButton.backgroundColor = UIColor(red: 249.0/255.0, green: 214.0/255.0, blue: 0.0/155.0, alpha: 1.0)
         
     }
 
