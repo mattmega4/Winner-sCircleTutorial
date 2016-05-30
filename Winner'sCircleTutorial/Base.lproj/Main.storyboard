@@ -64,6 +64,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="270" id="jdO-MS-0mn"/>
+                                            <constraint firstAttribute="width" constant="125" id="y3I-ac-uXa"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -77,6 +81,8 @@
                     <connections>
                         <outlet property="buttonsStackView" destination="KV1-5O-d5f" id="KD0-5w-uxm"/>
                         <outlet property="joinCompButton" destination="lWk-dk-uD9" id="WHV-Fz-5yT"/>
+                        <outlet property="landingHeightCon" destination="jdO-MS-0mn" id="3Ls-jP-fdd"/>
+                        <outlet property="landingWidthCon" destination="y3I-ac-uXa" id="Ggj-ZT-oIL"/>
                         <outlet property="logoStackView" destination="YEs-lQ-wcx" id="rTb-Ji-TkP"/>
                         <outlet property="startCompButton" destination="0cT-LL-MBV" id="YZH-9g-mSh"/>
                         <segue destination="XY7-rK-09i" kind="show" identifier="fromLandingToStart" animates="NO" id="c88-bi-Vv5"/>
@@ -96,9 +102,151 @@
                     <view key="view" contentMode="scaleToFill" id="jHB-Vl-c1L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="voE-tp-iTD">
+                                <rect key="frame" x="175" y="202.5" width="250" height="195"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otu-oo-h0s">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="35"/>
+                                        <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="PXZ-4n-hLn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Start Typing Theme here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XvN-kc-jiZ">
+                                        <rect key="frame" x="0.0" y="45" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="yPv-ev-HRB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="XY7-rK-09i" id="mlu-dJ-l9F"/>
+                                        </connections>
+                                    </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bi6-uT-mRt">
+                                        <rect key="frame" x="0.0" y="95" width="250" height="100"/>
+                                        <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ffY-6k-2O4"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="OZA-20-vmR">
+                                                <rect key="frame" x="0.0" y="28" width="250" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZA-20-vmR" id="Vyx-ya-7Qt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="XY7-rK-09i" id="UXB-Ju-vV4"/>
+                                            <outlet property="delegate" destination="XY7-rK-09i" id="aId-22-ome"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="otu-oo-h0s" secondAttribute="trailing" id="8eZ-QF-pUr"/>
+                                    <constraint firstItem="otu-oo-h0s" firstAttribute="leading" secondItem="voE-tp-iTD" secondAttribute="leading" id="FTU-5t-9lw"/>
+                                    <constraint firstAttribute="bottom" secondItem="bi6-uT-mRt" secondAttribute="bottom" id="Oxu-Aa-pla"/>
+                                    <constraint firstItem="otu-oo-h0s" firstAttribute="top" secondItem="voE-tp-iTD" secondAttribute="top" id="TWc-69-BXx"/>
+                                    <constraint firstAttribute="width" constant="250" id="kq8-2b-aYb"/>
+                                    <constraint firstAttribute="trailing" secondItem="bi6-uT-mRt" secondAttribute="trailing" id="oen-Nj-nWf"/>
+                                    <constraint firstItem="bi6-uT-mRt" firstAttribute="leading" secondItem="voE-tp-iTD" secondAttribute="leading" id="rqn-kj-Jya"/>
+                                    <constraint firstAttribute="height" constant="200" id="txe-4t-Ajn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="txe-4t-Ajn"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="8O9-SL-XjI">
+                                <rect key="frame" x="6" y="55" width="588" height="490"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="po8-Tm-jGN">
+                                        <rect key="frame" x="0.0" y="0.0" width="588" height="195"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnersColor" translatesAutoresizingMaskIntoConstraints="NO" id="JRO-8D-aMy">
+                                                <rect key="frame" x="0.0" y="0.0" width="588" height="195"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="195" id="2pY-YZ-TEu"/>
+                                                    <constraint firstAttribute="width" constant="195" id="Lvl-v5-2cl"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Lvl-v5-2cl"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dv4-hY-p2V">
+                                        <rect key="frame" x="231.5" y="220" width="125" height="270"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5P-Nf-M0P">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="F0T-aU-0ia"/>
+                                                    <constraint firstAttribute="height" constant="125" id="tfq-Ng-ZXd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leftOrTopButtonTapped:" destination="XY7-rK-09i" eventType="touchUpInside" id="36I-Bg-vyc"/>
+                                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b4H-gd-4bF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-3Q-xmr">
+                                                <rect key="frame" x="0.0" y="145" width="125" height="125"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="125" id="7Gn-ST-mUc"/>
+                                                    <constraint firstAttribute="width" constant="125" id="wex-Au-HtJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="bottomOrRightButtonTapped:" destination="XY7-rK-09i" eventType="touchUpInside" id="7dH-OS-rLa"/>
+                                                    <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iR5-CX-Fb5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="270" id="GN3-Hq-enZ"/>
+                                            <constraint firstAttribute="width" constant="125" id="Lec-tg-Ngb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8O9-SL-XjI" firstAttribute="centerY" secondItem="jHB-Vl-c1L" secondAttribute="centerY" id="AAF-6l-jZT"/>
+                            <constraint firstItem="voE-tp-iTD" firstAttribute="centerX" secondItem="jHB-Vl-c1L" secondAttribute="centerX" id="DwP-pi-XB7"/>
+                            <constraint firstItem="voE-tp-iTD" firstAttribute="centerY" secondItem="jHB-Vl-c1L" secondAttribute="centerY" id="QLY-7e-F0f"/>
+                            <constraint firstItem="8O9-SL-XjI" firstAttribute="centerX" secondItem="jHB-Vl-c1L" secondAttribute="centerX" id="efa-sh-BHV"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStackView" destination="dv4-hY-p2V" id="Qam-zr-i0H"/>
+                        <outlet property="leftOrTopButton" destination="I5P-Nf-M0P" id="QKm-Q3-bJQ"/>
+                        <outlet property="logoStackView" destination="po8-Tm-jGN" id="pMm-kY-cDf"/>
+                        <outlet property="mainStackView" destination="8O9-SL-XjI" id="lNx-2a-yaK"/>
+                        <outlet property="middleStackView" destination="voE-tp-iTD" id="WLy-yq-HJg"/>
+                        <outlet property="pickThemeLabel" destination="otu-oo-h0s" id="7bD-yM-cWE"/>
+                        <outlet property="rightOrBottomButton" destination="ZH2-3Q-xmr" id="AlM-NP-Iwj"/>
+                        <outlet property="startHeightCon" destination="GN3-Hq-enZ" id="9fA-zd-Wh9"/>
+                        <outlet property="startWidthCon" destination="Lec-tg-Ngb" id="lcx-7v-hm3"/>
+                        <outlet property="tableView" destination="bi6-uT-mRt" id="Pus-mo-GgX"/>
+                        <outlet property="themeTextField" destination="XvN-kc-jiZ" id="l0f-Ed-gkI"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="fromStartToLanding" animates="NO" id="hb4-24-KdZ"/>
                     </connections>
                 </viewController>
