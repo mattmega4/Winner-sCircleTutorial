@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>280331457546-gaghiig7boll7ebog94tf9povf0fuh2n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.280331457546-gaghiig7boll7ebog94tf9povf0fuh2n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDtc7029_K3Oj1mL_H-i86dHJCzgzWy9WM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>280331457546</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.matthewhsingleton.Winner-sCircle</string>
+	<key>PROJECT_ID</key>
+	<string>winners-circle-2cb77</string>
+	<key>STORAGE_BUCKET</key>
+	<string>winners-circle-2cb77.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:280331457546:ios:842c46dc0c6793dc</string>
+	<key>DATABASE_URL</key>
+	<string>https://winners-circle-2cb77.firebaseio.com</string>
+</dict>
+</plist>

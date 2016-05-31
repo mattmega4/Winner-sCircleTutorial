@@ -11,8 +11,7 @@ import UIKit
 class LandingPageViewController: UIViewController {
     
 
-    @IBOutlet weak var landingWidthCon: NSLayoutConstraint!
-    @IBOutlet weak var landingHeightCon: NSLayoutConstraint!
+
     @IBOutlet weak var startCompButton: UIButton!
     @IBOutlet weak var joinCompButton: UIButton!
     @IBOutlet weak var logoStackView: UIStackView!
@@ -31,6 +30,7 @@ class LandingPageViewController: UIViewController {
         joinCompButton.setTitle("Join a Competition", forState: .Normal)
         joinCompButton.backgroundColor = UIColor(red: 249.0/255.0, green: 214.0/255.0, blue: 0.0/155.0, alpha: 1.0)
         
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,10 +45,10 @@ class LandingPageViewController: UIViewController {
                                    options: .CurveLinear,
                                    animations: {
                                     
-                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, -90.0 )
+                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, -89.5 )
                                     
                                     self.buttonsStackView.axis = .Horizontal
-                                    self.buttonsStackView.transform = CGAffineTransformMakeTranslation( 0.0, 110.0 )
+                                    self.buttonsStackView.transform = CGAffineTransformMakeTranslation( 0.0, 15.0 )
                                     self.buttonsStackView.spacing = 40.0
                                     
                                     
@@ -57,8 +57,6 @@ class LandingPageViewController: UIViewController {
                                     
                                     self.joinCompButton.setTitle("Next", forState: .Normal)
                                     
-                                    self.landingHeightCon.constant = 125
-                                    self.landingWidthCon.constant = 270
                                     
                                     
                                     

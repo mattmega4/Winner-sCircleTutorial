@@ -9,9 +9,8 @@
 import UIKit
 
 class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var startHeightCon: NSLayoutConstraint!
     
-    @IBOutlet weak var startWidthCon: NSLayoutConstraint!
+
     
     @IBOutlet weak var mainStackView: UIStackView!
     
@@ -33,8 +32,8 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        middleStackView.transform = CGAffineTransformMakeTranslation( 0.0, 35.0 )
+        middleStackView.backgroundColor = UIColor.greenColor()
+
         
         leftOrTopButton.landingPageButtonsRound()
         leftOrTopButton.setTitle("Back", forState: .Normal)
@@ -51,11 +50,10 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
         view.backgroundColor = UIColor(red: 25.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1.0)
         
-        logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, -90.0 )
         
-        buttonStackView.axis = .Horizontal
-        buttonStackView.transform = CGAffineTransformMakeTranslation( 0.0, 110.0 )
-        buttonStackView.spacing = 40.0
+        themeTextField.keyboardAppearance = .Dark
+
+        
         
         leftOrTopButton.setTitle("Back", forState: .Normal)
         
@@ -74,16 +72,39 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
  
-        startHeightCon.constant = 125
-        startWidthCon.constant = 270
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StartCompetitionViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StartCompetitionViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
         
         
+        hideKeyboardWhenTappedAround()
+        
+        
+    }
+    
+    
+    @objc func keyboardWillShow(sender: NSNotification) {
+        
+        view.frame.origin.y = -170
+        
+    }
+    @objc func keyboardWillHide(sender: NSNotification) {
+        
+        view.frame.origin.y = 0
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        
+        self.themeTextField.resignFirstResponder()
+
+        return true
     }
     
     func slowFadeInMiddleInformation(){
@@ -180,6 +201,9 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
         themeTextField.text = selectedCell.textLabel!.text!
         
+        autoComplete.removeAll(keepCapacity: false)
+        
+        tableView.reloadData()
         
     }
     
@@ -192,10 +216,10 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
                                    options: .CurveLinear,
                                    animations: {
                                     
-                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, 0.0 )
+                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, 16.0 )
                                     
                                     self.buttonStackView.axis = .Vertical
-                                    self.buttonStackView.transform = CGAffineTransformMakeTranslation( 0.0, -0.0 )
+                                    self.buttonStackView.transform = CGAffineTransformMakeTranslation( 0.0, -160.0 )
                                     self.buttonStackView.spacing = 20.0
                                     
                                     self.leftOrTopButton.setTitle("Start a Competition", forState: .Normal)

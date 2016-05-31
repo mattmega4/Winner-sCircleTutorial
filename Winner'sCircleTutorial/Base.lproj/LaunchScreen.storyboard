@@ -68,6 +68,7 @@
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="uaa-VH-XJt" firstAttribute="centerY" secondItem="cGs-bR-lPF" secondAttribute="centerY" id="Bmg-Cw-bBH"/>
+                                    <constraint firstItem="8Xe-UW-stU" firstAttribute="top" secondItem="cGs-bR-lPF" secondAttribute="top" constant="55" id="TRQ-ES-49a"/>
                                     <constraint firstItem="uaa-VH-XJt" firstAttribute="centerX" secondItem="cGs-bR-lPF" secondAttribute="centerX" id="i9c-bk-dcz"/>
                                 </constraints>
                             </view>
