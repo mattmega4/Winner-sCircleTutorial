@@ -20,10 +20,21 @@ extension UIButton{
         titleLabel?.tintColor = UIColor.whiteColor()
         
     }
-
+        
+    func loginButtons(){
+        
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = 5
+        
+        
+        
+    }
+    
 }
 
 extension NSObject {
+    
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
@@ -33,5 +44,15 @@ extension NSObject {
             dispatch_get_main_queue(), closure)
     }
     
+    
+    func displayMessage(errorMessage: String?, fromViewController: UIViewController){
+        
+        let titleMessage = "Error"
+        let alert = UIAlertController(title: titleMessage, message: errorMessage, preferredStyle: .Alert)
+        let actionOK = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(actionOK)
+        fromViewController.presentViewController(alert, animated: true, completion: nil)
+        
+    }
     
 }

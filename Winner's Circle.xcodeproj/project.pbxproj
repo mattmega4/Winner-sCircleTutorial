@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250834291CFF71510085C1C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250834281CFF71510085C1C2 /* LoginViewController.swift */; };
+		2508342B1CFF72160085C1C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2508342A1CFF72160085C1C2 /* GoogleService-Info.plist */; };
+		2508342D1D0214F20085C1C2 /* WillJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */; };
 		251DBBF51CFC3B1F00BAE4F8 /* Keyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251DBBF41CFC3B1F00BAE4F8 /* Keyboard+Extension.swift */; };
-		2524A7A51CFD6B4800926EAB /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 2524A7A41CFD6B4800926EAB /* GoogleService-Info (2).plist */; };
 		25DFC4A51CF923120008CFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DFC4A41CF923120008CFD8 /* AppDelegate.swift */; };
 		25DFC4AA1CF923120008CFD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC4A81CF923120008CFD8 /* Main.storyboard */; };
 		25DFC4AC1CF923120008CFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC4AB1CF923120008CFD8 /* Assets.xcassets */; };
@@ -22,8 +24,10 @@
 
 /* Begin PBXFileReference section */
 		14EC611C10214247BAB079A6 /* Pods-Winner's Circle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winner's Circle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Winner's Circle/Pods-Winner's Circle.debug.xcconfig"; sourceTree = "<group>"; };
+		250834281CFF71510085C1C2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2508342A1CFF72160085C1C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillJoinViewController.swift; sourceTree = "<group>"; };
 		251DBBF41CFC3B1F00BAE4F8 /* Keyboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keyboard+Extension.swift"; sourceTree = "<group>"; };
-		2524A7A41CFD6B4800926EAB /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
 		25DFC4A11CF923110008CFD8 /* Winner's Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Winner's Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DFC4A41CF923120008CFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DFC4A91CF923120008CFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,7 +99,7 @@
 				25DFC4A41CF923120008CFD8 /* AppDelegate.swift */,
 				25DFC4AB1CF923120008CFD8 /* Assets.xcassets */,
 				25DFC4B01CF923120008CFD8 /* Info.plist */,
-				2524A7A41CFD6B4800926EAB /* GoogleService-Info (2).plist */,
+				2508342A1CFF72160085C1C2 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			path = "Winner'sCircleTutorial";
@@ -104,8 +108,10 @@
 		25DFC4B81CF923860008CFD8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				250834281CFF71510085C1C2 /* LoginViewController.swift */,
 				25DFC4BA1CF924BB0008CFD8 /* LandingPageViewController.swift */,
 				25DFC4C11CFB76610008CFD8 /* StartCompetitionViewController.swift */,
+				2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -205,8 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2524A7A51CFD6B4800926EAB /* GoogleService-Info (2).plist in Resources */,
 				25DFC4AF1CF923120008CFD8 /* LaunchScreen.storyboard in Resources */,
+				2508342B1CFF72160085C1C2 /* GoogleService-Info.plist in Resources */,
 				25DFC4AC1CF923120008CFD8 /* Assets.xcassets in Resources */,
 				25DFC4AA1CF923120008CFD8 /* Main.storyboard in Resources */,
 			);
@@ -267,11 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250834291CFF71510085C1C2 /* LoginViewController.swift in Sources */,
 				25DFC4C01CFABA410008CFD8 /* General+Extension.swift in Sources */,
 				25DFC4A51CF923120008CFD8 /* AppDelegate.swift in Sources */,
 				25DFC4BD1CF9259E0008CFD8 /* ThemeArray.swift in Sources */,
 				25DFC4BB1CF924BB0008CFD8 /* LandingPageViewController.swift in Sources */,
 				251DBBF51CFC3B1F00BAE4F8 /* Keyboard+Extension.swift in Sources */,
+				2508342D1D0214F20085C1C2 /* WillJoinViewController.swift in Sources */,
 				25DFC4C21CFB76610008CFD8 /* StartCompetitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

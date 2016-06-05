@@ -52,6 +52,7 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
         
         themeTextField.keyboardAppearance = .Dark
+        themeTextField.autocorrectionType = .No
 
         
         
@@ -105,6 +106,11 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         self.themeTextField.resignFirstResponder()
 
         return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func slowFadeInMiddleInformation(){
@@ -216,17 +222,12 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
                                    options: .CurveLinear,
                                    animations: {
                                     
-                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, 16.0 )
                                     
-                                    self.buttonStackView.axis = .Vertical
-                                    self.buttonStackView.transform = CGAffineTransformMakeTranslation( 0.0, -160.0 )
-                                    self.buttonStackView.spacing = 20.0
                                     
-                                    self.leftOrTopButton.setTitle("Start a Competition", forState: .Normal)
-                                    self.leftOrTopButton.landingPageButtonsRound()
+                                    self.middleStackView.center.y += self.view.bounds.width
                                     
-                                    self.rightOrBottomButton.setTitle("Join a Competition", forState: .Normal)
-                                    self.rightOrBottomButton.landingPageButtonsRound()
+                                    
+                                    self.buttonStackView.center.y += self.view.bounds.width
                                     
 
                                     
@@ -244,13 +245,8 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
                                    options: .CurveLinear,
                                    animations: {
                                     
-
-                                    
                                     self.middleStackView.alpha = 0.0
-                                    
-                                    
-                                    
-                                    
+                    
             }, completion: nil)
         
     }

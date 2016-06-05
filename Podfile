@@ -9,7 +9,7 @@ target 'Winner\'s Circle' do
 	pod 'Firebase'
     pod 'Firebase/Messaging'
     pod 'Firebase/Database'
-    pod 'Firebase/Invites'
+#    pod 'Firebase/Invites'
     pod 'Firebase/Crash'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'

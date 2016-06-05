@@ -31,12 +31,24 @@ class LandingPageViewController: UIViewController {
         joinCompButton.backgroundColor = UIColor(red: 249.0/255.0, green: 214.0/255.0, blue: 0.0/155.0, alpha: 1.0)
         
 
+
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loggedInAnimate1()
+        loggedInAnimate2()
+        
+    }
+    
     
     func animateLogoUpAndButtonsHorizontalAndDownAndSpaced(){
         
@@ -45,10 +57,10 @@ class LandingPageViewController: UIViewController {
                                    options: .CurveLinear,
                                    animations: {
                                     
-                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, -89.5 )
+                                    self.logoStackView.transform = CGAffineTransformMakeTranslation( 0.0, 17.5 )
                                     
                                     self.buttonsStackView.axis = .Horizontal
-                                    self.buttonsStackView.transform = CGAffineTransformMakeTranslation( 0.0, 15.0 )
+                                    self.buttonsStackView.transform = CGAffineTransformMakeTranslation( 0.0, 215.0 )
                                     self.buttonsStackView.spacing = 40.0
                                     
                                     
@@ -56,23 +68,54 @@ class LandingPageViewController: UIViewController {
                                     self.startCompButton.setTitle("Back", forState: .Normal)
                                     
                                     self.joinCompButton.setTitle("Next", forState: .Normal)
-                                    
-                                    
-                                    
-                                    
-                                    
+                   
                                     
             }, completion: nil)
         
     }
     
     
+    func loggedInAnimate1(){
+        
+        startCompButton.center = CGPoint(x: 100.0, y: 700.0)
+        
+        UIView.animateWithDuration(1,
+                                   delay: 0.0,
+                                   options: .CurveLinear,
+                                   animations: {
+                                    self.startCompButton.center.y -= self.view.bounds.width
+                                    
+                                    
+            }, completion: nil)
+        
+    }
     
+    func loggedInAnimate2(){
+        
+        joinCompButton.center = CGPoint(x: 100.0, y: 700.0)
+        
+        UIView.animateWithDuration(1,
+                                   delay: 0.0,
+                                   options: .CurveLinear,
+                                   animations: {
+                                    self.joinCompButton.center.y -= self.view.bounds.width
+                                    
+                                    
+            }, completion: nil)
+        
+    }
+    
+    func createRoom(){
+                
+        firebase.child("room").child("members").setValue(username)
+        
+    }
     
     
     @IBAction func startButtonTapped(sender: UIButton) {
         
         animateLogoUpAndButtonsHorizontalAndDownAndSpaced()
+        createRoom()
         
         delay(1.6) {
             self.performSegueWithIdentifier("fromLandingToStart", sender: self)

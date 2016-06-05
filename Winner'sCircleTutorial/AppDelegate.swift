@@ -9,6 +9,11 @@
 import UIKit
 import Firebase
 
+let firebase = FIRDatabase.database().reference()
+
+var uid = String()
+var username = String()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
