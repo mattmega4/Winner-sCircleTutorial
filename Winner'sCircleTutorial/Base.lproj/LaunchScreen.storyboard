@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-bR-lPF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="515"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-VH-XJt">
                                         <rect key="frame" x="175" y="35" width="250" height="445"/>
@@ -82,20 +82,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="uaa-VH-XJt" firstAttribute="centerY" secondItem="cGs-bR-lPF" secondAttribute="centerY" id="Bmg-Cw-bBH"/>
-                                    <constraint firstItem="8Xe-UW-stU" firstAttribute="top" secondItem="cGs-bR-lPF" secondAttribute="top" constant="55" id="TRQ-ES-49a"/>
+                                    <constraint firstItem="uaa-VH-XJt" firstAttribute="centerY" secondItem="cGs-bR-lPF" secondAttribute="centerY" constant="-42.5" id="Bmg-Cw-bBH"/>
                                     <constraint firstItem="uaa-VH-XJt" firstAttribute="top" secondItem="cGs-bR-lPF" secondAttribute="top" constant="35" id="dgY-gB-cvC"/>
                                     <constraint firstItem="uaa-VH-XJt" firstAttribute="centerX" secondItem="cGs-bR-lPF" secondAttribute="centerX" id="i9c-bk-dcz"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TRQ-ES-49a"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cGs-bR-lPF" secondAttribute="bottom" id="33i-hw-7eD"/>
                             <constraint firstItem="cGs-bR-lPF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8BO-iK-wiG"/>
                             <constraint firstItem="cGs-bR-lPF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qd4-Z8-K88"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cGs-bR-lPF" secondAttribute="bottom" id="hpd-2I-ItG"/>

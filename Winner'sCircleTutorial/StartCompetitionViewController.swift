@@ -11,13 +11,14 @@ import UIKit
 class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
 
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var mainStackView: UIStackView!
     
     @IBOutlet weak var pickThemeLabel: UILabel!
     
     @IBOutlet weak var themeTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
+
     
     @IBOutlet weak var middleStackView: UIStackView!
     @IBOutlet weak var logoStackView: UIStackView!
@@ -32,7 +33,7 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        middleStackView.backgroundColor = UIColor.greenColor()
+        
 
         
         leftOrTopButton.landingPageButtonsRound()
@@ -60,7 +61,7 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
         rightOrBottomButton.setTitle("Next", forState: .Normal)
         
-        slowFadeInMiddleInformation()
+//        slowFadeInMiddleInformation()
         
         
         themeTextField.delegate = self
@@ -70,7 +71,8 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         tableView.delegate = self
         
         
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+//        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
  
         
@@ -201,7 +203,11 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
     }
     
+    
+    
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         
         let selectedCell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
@@ -211,9 +217,16 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
         tableView.reloadData()
         
+       print("foo")
     }
     
     
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool
+    {
+        return !(gestureRecognizer.locationInView(self.tableView).x > 0 &&
+                gestureRecognizer.locationInView(self.tableView).x < self.tableView.bounds.size.width && gestureRecognizer.locationInView(self.tableView).y > 0 &&
+                    gestureRecognizer.locationInView(self.tableView).y < self.tableView.bounds.size.height)
+    }
     
     func animateEverythingBack(){
         
@@ -269,7 +282,22 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
     
     @IBAction func bottomOrRightButtonTapped(sender: UIButton) {
         
+        var isAMatch = false
         
+        if let text = themeTextField.text {
+            for key in LocalModal().possibleThemesArray {
+                if key == text {
+                    isAMatch = true
+                }
+            }
+        }
+        
+        if isAMatch {
+            self.performSegueWithIdentifier("fromStartToWillJoin", sender: self)
+        }
+        else {
+            displayMessage("Please Choose From the List", fromViewController: self)
+        }
         
     }
     

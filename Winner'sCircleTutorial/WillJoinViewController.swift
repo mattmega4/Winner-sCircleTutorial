@@ -14,13 +14,34 @@ class WillJoinViewController: UIViewController {
     @IBOutlet weak var joinedImage: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    
     @IBOutlet weak var buttonOutlet: UIStackView!
+    
+    var numberOfClicks = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        joinButtonSwitch()
+        
+        view.backgroundColor = UIColor(red: 25.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+
+        joinedImage.setBackgroundImage(UIImage(named: "checkedOff.png"), forState: .Normal)
+        joinLabel.text = "Joining the Competition?"
+        joinLabel.textColor = UIColor.whiteColor()
+        
+        
+        backButton.landingPageButtonsRound()
+        backButton.backgroundColor = UIColor(red: 239.0/255.0, green: 77.0/255.0, blue: 77.0/255.0, alpha: 1.0)
+        backButton.setTitle("Back", forState: .Normal)
+        backButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        
+        nextButton.landingPageButtonsRound()
+        nextButton.backgroundColor = UIColor(red: 249.0/255.0, green: 214.0/255.0, blue: 0.0/155.0, alpha: 1.0)
+        nextButton.setTitle("Next", forState: .Normal)
+        nextButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,14 +49,54 @@ class WillJoinViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func addClick(){
+        
+        numberOfClicks += 1
+        
+        joinButtonSwitch()
+        
+    }
+    
+    func joinButtonSwitch(){
+        
+        if numberOfClicks % 2 == 0 {
+            
+            
+            joinedImage.setBackgroundImage(UIImage(named: "checkedOff.png"), forState: .Normal)
+            
+        } else {
+            
+            joinedImage.setBackgroundImage(UIImage(named: "checkedOn.png"), forState: .Normal)
+            
+        }
+        
+    }
+    
+    
     @IBAction func joinedTapped(sender: UIButton) {
+        
+        addClick()
+        
     }
 
     @IBAction func backTapped(sender: UIButton) {
+        
+        
+        
     }
    
     @IBAction func nextTapped(sender: UIButton) {
+        
+        
+        
     }
+    
+    
+    
+    
+    
+
 
 
 }
