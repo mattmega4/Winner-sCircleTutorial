@@ -13,6 +13,8 @@ let firebase = FIRDatabase.database().reference()
 
 var uid = String()
 var username = String()
+var createdRoomRefGlobal = FIRDatabaseReference()
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

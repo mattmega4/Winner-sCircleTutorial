@@ -106,9 +106,14 @@ class LandingPageViewController: UIViewController {
     }
     
     func createRoom(){
-                
-        firebase.child("room").child("members").setValue(username)
         
+        let createdRoomRef = firebase.child("room").childByAutoId()
+        
+        createdRoomRef.child("createdBy").setValue(username)
+        
+        createdRoomRef.child("status").setValue("seedling")
+ 
+        createdRoomRefGlobal = createdRoomRef
     }
     
     

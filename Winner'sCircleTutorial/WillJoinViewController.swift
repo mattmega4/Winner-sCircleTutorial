@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WillJoinViewController: UIViewController {
 
@@ -74,6 +75,69 @@ class WillJoinViewController: UIViewController {
     }
     
     
+    func nextContinueJoined(){
+        
+        
+        if numberOfClicks % 2 == 0 {
+            
+            createdRoomRefGlobal.child("participating").setValue(false)
+            
+        } else {
+            
+            createdRoomRefGlobal.child("members").setValue(uid)
+            createdRoomRefGlobal.child("participating").setValue(true)
+            addMemberNumber()
+            
+            
+            
+        }
+        
+    }
+    
+    func addMemberNumber(){
+        
+        
+        createdRoomRefGlobal.child("totalNumberOfMembers").runTransactionBlock { (currentData: FIRMutableData) -> FIRTransactionResult in
+            
+            var value = currentData.value as? Int
+
+            if value == nil {
+                value = 0
+            }
+            
+            currentData.value = value! + 1
+            return FIRTransactionResult.successWithValue(currentData)
+           
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    func animateEverything(){
+        
+        UIView.animateWithDuration(1.5,
+                                   delay: 0.0,
+                                   options: .CurveLinear,
+                                   animations: {
+                                    
+                                    
+                                    
+                                    self.joinedImage.center.y += self.view.bounds.width
+                                    
+                                    
+                                    self.joinLabel.center.y += self.view.bounds.width
+                                    
+                                    self.buttonOutlet.center.y += self.view.bounds.width
+                                    
+                                    
+            }, completion: nil)
+        
+    }
+    
     @IBAction func joinedTapped(sender: UIButton) {
         
         addClick()
@@ -82,13 +146,23 @@ class WillJoinViewController: UIViewController {
 
     @IBAction func backTapped(sender: UIButton) {
         
+        animateEverything()
         
+        delay(1.6) { 
+            self.performSegueWithIdentifier("fromWillJointoStart", sender: self)
+        }
         
     }
    
     @IBAction func nextTapped(sender: UIButton) {
         
+        animateEverything()
         
+        nextContinueJoined()
+        
+        delay(1.6) { 
+            self.performSegueWithIdentifier("fromWillJoinToParcipants", sender: self)
+        }
         
     }
     

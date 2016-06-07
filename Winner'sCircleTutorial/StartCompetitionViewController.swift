@@ -217,7 +217,7 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
         tableView.reloadData()
         
-       print("foo")
+        view.endEditing(true)
     }
     
     
@@ -228,7 +228,7 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
                     gestureRecognizer.locationInView(self.tableView).y < self.tableView.bounds.size.height)
     }
     
-    func animateEverythingBack(){
+    func animateEverything(){
         
         UIView.animateWithDuration(1.5,
                                    delay: 0.0,
@@ -241,10 +241,6 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
                                     
                                     
                                     self.buttonStackView.center.y += self.view.bounds.width
-                                    
-
-                                    
-                                    
                                     
                                     
             }, completion: nil)
@@ -264,13 +260,44 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
         
     }
     
+    func nextContinue(){
+        
+        var textFieldText = String()
+        
+        var isAMatch = false
+        
+        if let text = themeTextField.text {
+            
+            textFieldText = text
+            
+            for key in LocalModal().possibleThemesArray {
+                if key == text {
+                    isAMatch = true
+                }
+            }
+        }
+        
+        if isAMatch {
+            
+            createdRoomRefGlobal.child("theme").setValue(textFieldText)
+            
+            self.performSegueWithIdentifier("fromStartToWillJoin", sender: self)
+        }
+        else {
+            displayMessage("Please Choose From the List", fromViewController: self)
+        }
+        
     
+    
+    }
     
     @IBAction func leftOrTopButtonTapped(sender: UIButton) {
         
         
-        animateEverythingBack()
+        animateEverything()
         fadeOutOfMiddleStackView()
+        
+        createdRoomRefGlobal.child("status").setValue("killed")
         
         delay(1.6) { 
             self.performSegueWithIdentifier("fromStartToLanding", sender: self)
@@ -282,24 +309,11 @@ class StartCompetitionViewController: UIViewController, UITextFieldDelegate, UIT
     
     @IBAction func bottomOrRightButtonTapped(sender: UIButton) {
         
-        var isAMatch = false
+        animateEverything()
+        nextContinue()
         
-        if let text = themeTextField.text {
-            for key in LocalModal().possibleThemesArray {
-                if key == text {
-                    isAMatch = true
-                }
-            }
-        }
         
-        if isAMatch {
-            self.performSegueWithIdentifier("fromStartToWillJoin", sender: self)
-        }
-        else {
-            displayMessage("Please Choose From the List", fromViewController: self)
-        }
         
     }
-    
     
 }

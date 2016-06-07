@@ -505,17 +505,150 @@
                         <outlet property="joinLabel" destination="uw7-Gm-1zF" id="EfR-LW-glF"/>
                         <outlet property="joinedImage" destination="VR6-9R-2vT" id="oM0-4g-lq2"/>
                         <outlet property="nextButton" destination="prH-go-Eu4" id="Yqp-dQ-rgZ"/>
+                        <segue destination="zXf-me-a59" kind="show" identifier="fromWillJoinToParcipants" animates="NO" id="LSY-mx-3Jx"/>
+                        <segue destination="XY7-rK-09i" kind="show" identifier="fromWillJointoStart" animates="NO" id="qfm-Q6-U5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZD-jV-YZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1558" y="189"/>
         </scene>
+        <!--Participants View Controller-->
+        <scene sceneID="rX4-2Y-qAt">
+            <objects>
+                <viewController id="zXf-me-a59" customClass="ParticipantsViewController" customModule="Winner_s_Circle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WvL-1c-26E"/>
+                        <viewControllerLayoutGuide type="bottom" id="hS0-ca-mZu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gNi-v4-klN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lFT-kD-Tw4">
+                                <rect key="frame" x="155" y="52" width="290" height="494"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnersColor" translatesAutoresizingMaskIntoConstraints="NO" id="dSd-bG-wJP">
+                                        <rect key="frame" x="70" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="FDb-qO-vgt"/>
+                                            <constraint firstAttribute="width" constant="150" id="ey7-Kt-Lls"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5f-5Q-P64">
+                                        <rect key="frame" x="120" y="170" width="50" height="10"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="7HK-tQ-anX"/>
+                                            <constraint firstAttribute="height" constant="10" id="Wai-m3-Ecf"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="How many participants?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GR-gi-yvB">
+                                        <rect key="frame" x="53" y="200" width="184" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="7Ju-Ee-sro"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6Y-Er-Xmh">
+                                        <rect key="frame" x="145" y="241" width="0.0" height="10"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="eFq-i8-3Qf"/>
+                                        </constraints>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jnf-FV-7mH">
+                                        <rect key="frame" x="40" y="271" width="209" height="29"/>
+                                        <segments>
+                                            <segment title="4"/>
+                                            <segment title="6"/>
+                                            <segment title="8"/>
+                                            <segment title="10"/>
+                                            <segment title="12"/>
+                                            <segment title="14"/>
+                                            <segment title="16"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="segmentedControl:" destination="zXf-me-a59" eventType="valueChanged" id="uYD-TS-IJW"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZG-mp-zOg">
+                                        <rect key="frame" x="120" y="319" width="50" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="CRp-XX-PcJ"/>
+                                            <constraint firstAttribute="height" constant="30" id="lIe-tW-Or1"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="z6B-QH-c88">
+                                        <rect key="frame" x="0.0" y="369" width="290" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohK-s8-gZg">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="125" id="YFp-kc-E3h"/>
+                                                    <constraint firstAttribute="width" constant="125" id="alI-co-Pif"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="zXf-me-a59" eventType="touchUpInside" id="FF8-Ku-toX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-nm-MOb">
+                                                <rect key="frame" x="165" y="0.0" width="125" height="125"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="125" id="b06-mG-IoE"/>
+                                                    <constraint firstAttribute="width" constant="125" id="p4c-9i-Ka0"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="nextButtontapped:" destination="zXf-me-a59" eventType="touchUpInside" id="boq-lU-pXc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="474" id="NV7-jO-dzf"/>
+                                    <constraint firstAttribute="height" constant="474" id="boc-TP-Fjd"/>
+                                    <constraint firstAttribute="height" constant="494" id="vMm-vT-khK"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NV7-jO-dzf"/>
+                                        <exclude reference="boc-TP-Fjd"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lFT-kD-Tw4" firstAttribute="top" secondItem="WvL-1c-26E" secondAttribute="bottom" constant="32" id="0We-gL-Sc5"/>
+                            <constraint firstItem="lFT-kD-Tw4" firstAttribute="centerX" secondItem="gNi-v4-klN" secondAttribute="centerX" id="AT7-JZ-TcZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="ohK-s8-gZg" id="iUs-I8-Bhs"/>
+                        <outlet property="label" destination="9GR-gi-yvB" id="kph-gG-IPw"/>
+                        <outlet property="nextButton" destination="fkh-nm-MOb" id="q2k-Wp-qev"/>
+                        <outlet property="segmenControl" destination="Jnf-FV-7mH" id="w4O-u7-Y81"/>
+                        <segue destination="E0r-EN-bxN" kind="show" identifier="fromParticipantsoWillJoin" animates="NO" id="kyZ-GN-PWz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2u-Zb-vmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="189"/>
+        </scene>
     </scenes>
     <resources>
         <image name="winnersColor" width="588" height="589"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qfm-Q6-U5h"/>
+        <segue reference="kyZ-GN-PWz"/>
         <segue reference="hb4-24-KdZ"/>
     </inferredMetricsTieBreakers>
 </document>
