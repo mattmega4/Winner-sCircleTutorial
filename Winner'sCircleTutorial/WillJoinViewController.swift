@@ -96,7 +96,7 @@ class WillJoinViewController: UIViewController {
     
     func addMemberNumber(){
         
-        
+       
         createdRoomRefGlobal.child("totalNumberOfMembers").runTransactionBlock { (currentData: FIRMutableData) -> FIRTransactionResult in
             
             var value = currentData.value as? Int

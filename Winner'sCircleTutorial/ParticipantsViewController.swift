@@ -109,13 +109,13 @@ class ParticipantsViewController: UIViewController {
                                     
                                     
                                     
-                                    self.label.center.y += self.view.bounds.width
+                                    self.label.center.y += self.view.bounds.height
                                     
-                                    self.segmenControl.center.y += self.view.bounds.width
+                                    self.segmenControl.center.y += self.view.bounds.height
                                     
-                                    self.backButton.center.y += self.view.bounds.width
+                                    self.backButton.center.y += self.view.bounds.height
                                     
-                                    self.nextButton.center.y += self.view.bounds.width
+                                    self.nextButton.center.y += self.view.bounds.height
                                     
                                     
             }, completion: nil)
@@ -139,7 +139,9 @@ class ParticipantsViewController: UIViewController {
         
         animateEverything()
         
-        
+        delay(1.6) {
+            self.performSegueWithIdentifier("fromParticipantsToReview", sender: self)
+        }
         
     }
 

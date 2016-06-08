@@ -12,7 +12,8 @@
 		2508342D1D0214F20085C1C2 /* WillJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */; };
 		251DBBF51CFC3B1F00BAE4F8 /* Keyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251DBBF41CFC3B1F00BAE4F8 /* Keyboard+Extension.swift */; };
 		255C3E4F1D06AA140028D1D8 /* ParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C3E4E1D06AA140028D1D8 /* ParticipantsViewController.swift */; };
-		255C3E511D0764540028D1D8 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C3E501D0764540028D1D8 /* TimeViewController.swift */; };
+		255C3E531D0803EC0028D1D8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C3E521D0803EC0028D1D8 /* ReviewViewController.swift */; };
+		255C3E561D08B0AF0028D1D8 /* JoinOrFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255C3E551D08B0AF0028D1D8 /* JoinOrFindViewController.swift */; };
 		25DFC4A51CF923120008CFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DFC4A41CF923120008CFD8 /* AppDelegate.swift */; };
 		25DFC4AA1CF923120008CFD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC4A81CF923120008CFD8 /* Main.storyboard */; };
 		25DFC4AC1CF923120008CFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC4AB1CF923120008CFD8 /* Assets.xcassets */; };
@@ -31,7 +32,8 @@
 		2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillJoinViewController.swift; sourceTree = "<group>"; };
 		251DBBF41CFC3B1F00BAE4F8 /* Keyboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keyboard+Extension.swift"; sourceTree = "<group>"; };
 		255C3E4E1D06AA140028D1D8 /* ParticipantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsViewController.swift; sourceTree = "<group>"; };
-		255C3E501D0764540028D1D8 /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		255C3E521D0803EC0028D1D8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		255C3E551D08B0AF0028D1D8 /* JoinOrFindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinOrFindViewController.swift; sourceTree = "<group>"; };
 		25DFC4A11CF923110008CFD8 /* Winner's Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Winner's Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DFC4A41CF923120008CFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DFC4A91CF923120008CFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		255C3E541D08B0620028D1D8 /* Creation of Comp */ = {
+			isa = PBXGroup;
+			children = (
+				25DFC4C11CFB76610008CFD8 /* StartCompetitionViewController.swift */,
+				2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */,
+				255C3E4E1D06AA140028D1D8 /* ParticipantsViewController.swift */,
+				255C3E521D0803EC0028D1D8 /* ReviewViewController.swift */,
+			);
+			name = "Creation of Comp";
+			sourceTree = "<group>";
+		};
+		255C3E571D08B0B70028D1D8 /* Join or Find Comp */ = {
+			isa = PBXGroup;
+			children = (
+				255C3E551D08B0AF0028D1D8 /* JoinOrFindViewController.swift */,
+			);
+			name = "Join or Find Comp";
+			sourceTree = "<group>";
+		};
 		25DFC4981CF923110008CFD8 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +135,8 @@
 			children = (
 				250834281CFF71510085C1C2 /* LoginViewController.swift */,
 				25DFC4BA1CF924BB0008CFD8 /* LandingPageViewController.swift */,
-				25DFC4C11CFB76610008CFD8 /* StartCompetitionViewController.swift */,
-				2508342C1D0214F20085C1C2 /* WillJoinViewController.swift */,
-				255C3E4E1D06AA140028D1D8 /* ParticipantsViewController.swift */,
-				255C3E501D0764540028D1D8 /* TimeViewController.swift */,
+				255C3E541D08B0620028D1D8 /* Creation of Comp */,
+				255C3E571D08B0B70028D1D8 /* Join or Find Comp */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -280,8 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				250834291CFF71510085C1C2 /* LoginViewController.swift in Sources */,
-				255C3E511D0764540028D1D8 /* TimeViewController.swift in Sources */,
+				255C3E561D08B0AF0028D1D8 /* JoinOrFindViewController.swift in Sources */,
 				25DFC4C01CFABA410008CFD8 /* General+Extension.swift in Sources */,
+				255C3E531D0803EC0028D1D8 /* ReviewViewController.swift in Sources */,
 				25DFC4A51CF923120008CFD8 /* AppDelegate.swift in Sources */,
 				25DFC4BD1CF9259E0008CFD8 /* ThemeArray.swift in Sources */,
 				25DFC4BB1CF924BB0008CFD8 /* LandingPageViewController.swift in Sources */,

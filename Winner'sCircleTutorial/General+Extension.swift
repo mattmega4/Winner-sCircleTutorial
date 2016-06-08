@@ -56,3 +56,23 @@ extension NSObject {
     }
     
 }
+
+
+
+extension UILabel{
+    
+    func categoryLabel(){
+        
+       font = UIFont(name:"Helvetica-Bold", size: 20)
+        textColor = UIColor.whiteColor()
+        
+    }
+    
+    func resultsLabel(){
+        
+        font = UIFont(name: "Helvetica", size: 18)
+        textColor = UIColor.whiteColor()
+    }
+     
+}
+
