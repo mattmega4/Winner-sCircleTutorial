@@ -83,7 +83,7 @@ class LandingPageViewController: UIViewController {
                                    delay: 0.0,
                                    options: .CurveLinear,
                                    animations: {
-                                    self.startCompButton.center.y -= self.view.bounds.width
+                                    self.startCompButton.center.y -= self.view.bounds.height
                                     
                                     
             }, completion: nil)
@@ -117,6 +117,24 @@ class LandingPageViewController: UIViewController {
     }
     
     
+    func animateEverything(){
+        
+        UIView.animateWithDuration(1.5,
+                                   delay: 0.0,
+                                   options: .CurveLinear,
+                                   animations: {
+                                    
+                                    
+                                    
+                                    self.buttonsStackView.center.y += self.view.bounds.height
+                                    
+                              
+                                    
+                                    
+            }, completion: nil)
+        
+    }
+    
     @IBAction func startButtonTapped(sender: UIButton) {
         
         animateLogoUpAndButtonsHorizontalAndDownAndSpaced()
@@ -131,7 +149,10 @@ class LandingPageViewController: UIViewController {
     
     @IBAction func joinButtonTapped(sender: UIButton) {
         
-        
+        animateEverything()
+        delay(1.6) { 
+            self.performSegueWithIdentifier("fromLandingJoinOrFind", sender: self)
+        }
         
     }
     
